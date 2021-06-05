@@ -1,21 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
-import { CustomMaterialModule } from './core/material.module';
-import { AppRoutingModule } from './core/app.routing.module';
+import { CustomMaterialModule } from './shared/material.module';
+import { AppRoutingModule } from './app.routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-import { SignupComponent } from './signup/signup.component';
-import
-{
-  FooterComponent,
-  HeaderComponent,
-} from './shared';
+import { LoginComponent } from './pages/login/login.component';
+import { UserComponent } from './pages/user/user.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { FooterComponent } from './features/footer/footer.component';
+import { HeaderComponent } from './features/header/header.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +31,8 @@ import
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

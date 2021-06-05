@@ -1,5 +1,5 @@
 <div class="full-container" fxLayoutAlign="center center">
-    <form fxLayout="column" [formGroup]="signupForm" (submit)="submit()">
+    <form fxLayout="column" [formGroup]="signupForm" (submit)="onSubmit()">
         <mat-form-field class="form-field" appearance="outline">
             <mat-label> Name
             </mat-label>
@@ -27,8 +27,16 @@
             </mat-error>
         </mat-form-field>
         <section>
-            <mat-checkbox class="field-margin">user</mat-checkbox>
-            <mat-checkbox class="field-margin">blogger</mat-checkbox>
+            <div *ngFor="let role of Roles; let i=index">
+                <mat-checkbox 
+                    (change)="onCheckboxChange(role.value, $event.checked)" 
+                    class="field-margin"
+                >{{role.name}}</mat-checkbox>
+            </div>
+
+            <p class="error" *ngIf="this.signupForm.controls['roles'].errors?.required">
+                Checkbox is required, select atleast one value.
+            </p>
         </section>
         <button mat-raised-button color="primary" type="submit">Sign up</button>
     </form>
