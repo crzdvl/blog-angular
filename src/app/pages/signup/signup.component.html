@@ -33,10 +33,6 @@
                     class="field-margin"
                 >{{role.name}}</mat-checkbox>
             </div>
-
-            <p class="error" *ngIf="this.signupForm.controls['roles'].errors?.required">
-                Checkbox is required, select atleast one value.
-            </p>
         </section>
         <button mat-raised-button color="primary" type="submit">Sign up</button>
     </form>

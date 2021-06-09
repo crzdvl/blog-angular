@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { UserDataDTO } from '../interfaces';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationService {
+export class AuthService {
     private currentUserSubject: BehaviorSubject<UserDataDTO>;
     public currentUser: Observable<UserDataDTO>;
 

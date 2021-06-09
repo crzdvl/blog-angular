@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
+
 import { CustomMaterialModule } from './shared/material.module';
 import { AppRoutingModule } from './app.routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -12,8 +13,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserComponent } from './pages/user/user.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { FooterComponent } from './features/footer/footer.component';
-import { HeaderComponent } from './features/header/header.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HeaderComponent } from './features/header/header.component'
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

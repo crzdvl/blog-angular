@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from '../../core/services';
+import { AuthService } from '../../core/services';
 
 @Component({
   selector: 'app-signup',
@@ -25,8 +25,11 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authenticationService: AuthenticationService,
+    private authService: AuthService,
   ) {
+    if (this.authService.currentUserValue) { 
+      this.router.navigate(['/']);
+    }
   }
 
   ngOnInit() {
@@ -54,13 +57,12 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
     if (this.signupForm.invalid) {
       return;
     }
 
     this.loading = true;
-    this.authenticationService.signup(this.signupForm.value)
+    this.authService.signup(this.signupForm.value)
       .pipe(first())
       .subscribe(
         data => {

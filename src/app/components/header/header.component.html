@@ -1,13 +1,16 @@
 <mat-toolbar class="header flex-container" color="primary">
   <span>Blog</span>
   <div class="flex-container">
-    <a class="menu-link" href="/login">
+    <a *ngIf="!currentUser" class="menu-link" href="/login">
       <button mat-button>
         Sign in
       </button>
     </a>
-    <a class="menu-link" href="/signup">
+    <a *ngIf="!currentUser" class="menu-link" href="/signup">
       <button mat-button >Sign up</button>
+    </a>
+    <a *ngIf="currentUser" class="menu-link" href="/user">
+      <fa-icon [icon]="faUser"></fa-icon>
     </a>
   </div>
 </mat-toolbar>
