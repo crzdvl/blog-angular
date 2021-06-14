@@ -14,7 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { UserComponent } from './pages/user/user.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component'
+import { HeaderComponent } from './components/header/header.component';
+import { InputForm } from './components/inputForm/inputForm.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +24,16 @@ import { HeaderComponent } from './components/header/header.component'
     UserComponent,
     SignupComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    InputForm
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
-    FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
     FontAwesomeModule
